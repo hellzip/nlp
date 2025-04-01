@@ -15,7 +15,7 @@ db.init_app(app)
 from models import UserInteraction
 
 def load_dataset():
-    df = pd.read_csv('D:/University/SEM 4/Natural Language Processing/Assignment 2/backend/data/gen_zz_words.csv')
+    df = pd.read_csv('data/gen_zz_words.csv')
     data = {}
     for _, row in df.iterrows():
         data[row['Word/Phrase'].lower()] = {
@@ -28,7 +28,7 @@ def load_dataset():
 slang_data = load_dataset()
 
 def get_chatgpt_response(user_input):
-    api_key = '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'
+    api_key = '' # add the api key
     api_url = 'https://api.openai.com/v1/chat/completions'
     
     headers = {
